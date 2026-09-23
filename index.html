@@ -135,18 +135,44 @@
   </div>
 </section>
 
+
 <section id="contacts" class="section contacts">
   <div class="contact-panel">
-    <div class="kicker">КОНТАКТЫ</div>
-    <h2>Обсудим вашу задачу</h2>
-    <div class="contact-grid">
-      <div><small>Телефон</small><strong>добавить номер</strong></div>
-      <div><small>E-mail</small><strong>добавить e-mail</strong></div>
-      <div><small>Location</small><strong>добавить локацию</strong></div>
-      <div><small>Веб-сайт</small><strong>mineral-solutions.com.ua</strong></div>
-    </div>
+    <div class="kicker">ОБРАТНАЯ СВЯЗЬ</div>
+    <h2>Расскажите о вашей задаче</h2>
+    <p class="contact-lead">Опишите проект или вопрос — сообщение будет направлено на <a href="mailto:mineral.solutions.office@gmail.com">mineral.solutions.office@gmail.com</a></p>
+
+    <form class="contact-form" action="https://formsubmit.co/mineral.solutions.office@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="Новая заявка с сайта Mineral Solutions">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off">
+
+      <div class="form-row">
+        <label>
+          <span>Имя</span>
+          <input type="text" name="Имя" placeholder="Ваше имя" required>
+        </label>
+        <label>
+          <span>E-mail</span>
+          <input type="email" name="email" placeholder="name@company.com" required>
+        </label>
+      </div>
+
+      <label>
+        <span>Компания</span>
+        <input type="text" name="Компания" placeholder="Название компании">
+      </label>
+
+      <label>
+        <span>Сообщение</span>
+        <textarea name="Сообщение" rows="6" placeholder="Кратко опишите задачу, проект или требуемые услуги" required></textarea>
+      </label>
+
+      <button type="submit" class="submit-btn">Отправить сообщение</button>
+    </form>
   </div>
 </section>
+
 </main>
 
 <footer>© Mineral Solutions</footer>
