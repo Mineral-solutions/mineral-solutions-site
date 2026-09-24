@@ -2,69 +2,26 @@ function toggleMenu(){document.getElementById('menu').classList.toggle('open')}
 document.querySelectorAll('#menu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('menu').classList.remove('open')));
 
 const equipmentData = {
-  crushing: {
-    title:'Дробильно-сортировочное оборудование',
-    description:'Решения для подготовки минерального сырья: дробление, грохочение, питание и классификация.',
-    items:'Дробилки · грохоты · питатели · классификаторы · загрузочные и разгрузочные узлы.',
-    services:'Формируем технические требования, подбираем типоразмер и производительность, компонуем участок, интегрируем оборудование в общую технологическую схему.',
-    tab:'Дробление и сортировка'
-  },
-  beneficiation:{
-    title:'Обогатительное оборудование',
-    description:'Оборудование для основных процессов обогащения и подготовки продукта.',
-    items:'Флотационные машины · сепараторы · мельницы · гидроциклоны · классификаторы.',
-    services:'Разрабатываем технологическую схему, выполняем материальные балансы и расчёты, подбираем и интегрируем оборудование под свойства сырья и требуемый продукт.',
-    tab:'Обогащение'
-  },
-  dewatering:{
-    title:'Сгущение, фильтрация и обезвоживание',
-    description:'Решения для сгущения пульпы, обезвоживания концентратов и хвостов, возврата воды в технологический цикл.',
-    items:'Сгустители · фильтр-прессы · вакуумные фильтры · реагентные системы · вспомогательные насосные узлы.',
-    services:'Подбираем технологию и оборудование, считаем режимы, водно-шламовый баланс и привязываем участок к существующим сетям и инфраструктуре.',
-    tab:'Сгущение и фильтрация'
-  },
-  transport:{
-    title:'Транспортировка и складирование',
-    description:'Системы перемещения, перегрузки и складирования сырья, промежуточных и готовых продуктов.',
-    items:'Конвейеры · перегрузочные узлы · системы подачи · бункеры · галереи · складские системы.',
-    services:'Прорабатываем трассы, производительность, компоновку, приводы, перегрузки и сопряжение с технологическим оборудованием.',
-    tab:'Транспортировка'
-  },
-  pumps:{
-    title:'Насосное и гидротранспортное оборудование',
-    description:'Оборудование для пульпы, шламов, оборотной воды и технологических жидкостей.',
-    items:'Шламовые насосы · трубопроводы · арматура · насосные станции · гидроциклонные узлы.',
-    services:'Выполняем гидравлические расчёты, подбор насосов и трубопроводов, проработку трасс, режимов и интеграцию в водно-шламовую схему.',
-    tab:'Насосы и гидротранспорт'
-  },
-  lifting:{
-    title:'Подъёмное оборудование',
-    description:'Подъёмно-транспортные решения для производственных корпусов, ремонтных зон и технологических площадок.',
-    items:'Краны мостовые · кран-балки · тали · подъёмные механизмы · обслуживающие краны.',
-    services:'Подбираем грузоподъёмность и режим работы, увязываем оборудование с конструкциями здания и требованиями обслуживания технологической линии.',
-    tab:'Подъёмное оборудование'
-  }
+  crushing:{title:'Дробильно-сортировочное оборудование',description:'Решения для подготовки минерального сырья: дробление, грохочение, питание и классификация.',items:'Дробилки · грохоты · питатели · классификаторы · загрузочные и разгрузочные узлы.',services:'Формируем технические требования, подбираем типоразмер и производительность, компонуем участок и интегрируем оборудование в общую технологическую схему.'},
+  beneficiation:{title:'Обогатительное оборудование',description:'Оборудование для основных процессов обогащения и подготовки продукта.',items:'Флотационные машины · сепараторы · мельницы · гидроциклоны · классификаторы.',services:'Разрабатываем технологическую схему, выполняем материальные балансы и расчёты, подбираем и интегрируем оборудование под свойства сырья и требуемый продукт.'},
+  dewatering:{title:'Сгущение, фильтрация и обезвоживание',description:'Решения для сгущения пульпы, обезвоживания концентратов и хвостов, возврата воды в технологический цикл.',items:'Сгустители · фильтр-прессы · вакуумные фильтры · реагентные системы · вспомогательные насосные узлы.',services:'Подбираем технологию и оборудование, считаем режимы и водно-шламовый баланс, привязываем участок к существующим сетям и инфраструктуре.'},
+  transport:{title:'Транспортировка и складирование',description:'Системы перемещения, перегрузки и складирования сырья, промежуточных и готовых продуктов.',items:'Конвейеры · перегрузочные узлы · системы подачи · бункеры · галереи · складские системы.',services:'Прорабатываем трассы, производительность, компоновку, приводы, перегрузки и сопряжение с технологическим оборудованием.'},
+  pumps:{title:'Насосное и гидротранспортное оборудование',description:'Оборудование для пульпы, шламов, оборотной воды и технологических жидкостей.',items:'Шламовые насосы · трубопроводы · арматура · насосные станции · гидроциклонные узлы.',services:'Выполняем гидравлические расчёты, подбор насосов и трубопроводов, проработку трасс, режимов и интеграцию в водно-шламовую схему.'},
+  lifting:{title:'Подъёмное оборудование',description:'Подъёмно-транспортные решения для производственных корпусов, ремонтных зон и технологических площадок.',items:'Краны мостовые · кран-балки · тали · подъёмные механизмы · обслуживающие краны.',services:'Подбираем грузоподъёмность и режим работы, увязываем оборудование с конструкциями здания и требованиями обслуживания технологической линии.'}
 };
+function renderEquipment(key){const d=equipmentData[key];if(!d)return;document.getElementById('equipment-title').textContent=d.title;document.getElementById('equipment-description').textContent=d.description;document.getElementById('equipment-items').textContent=d.items;document.getElementById('equipment-services').textContent=d.services;document.querySelectorAll('[data-equipment]').forEach(el=>el.classList.toggle('active',el.dataset.equipment===key));}
 
-function renderEquipment(key){
-  const d=equipmentData[key]; if(!d) return;
-  document.getElementById('equipment-title').textContent=d.title;
-  document.getElementById('equipment-description').textContent=d.description;
-  document.getElementById('equipment-items').textContent=d.items;
-  document.getElementById('equipment-services').textContent=d.services;
-  document.querySelectorAll('.equipment-zone').forEach(x=>x.classList.toggle('active',x.dataset.equipment===key));
-  document.querySelectorAll('#equipment-tabs button').forEach(x=>x.classList.toggle('active',x.dataset.equipment===key));
-}
-function initEquipment(){
-  const tabs=document.getElementById('equipment-tabs');
-  if(!tabs) return;
-  tabs.innerHTML=Object.entries(equipmentData).map(([key,d])=>`<button type="button" data-equipment="${key}">${d.tab}</button>`).join('');
-  renderEquipment('crushing');
-  document.querySelectorAll('.equipment-zone').forEach(el=>{
-    el.addEventListener('mouseenter',()=>renderEquipment(el.dataset.equipment));
-    el.addEventListener('focus',()=>renderEquipment(el.dataset.equipment));
-    el.addEventListener('click',()=>renderEquipment(el.dataset.equipment));
-  });
-  tabs.addEventListener('click',e=>{const b=e.target.closest('button[data-equipment]');if(b)renderEquipment(b.dataset.equipment)});
-}
-document.addEventListener('DOMContentLoaded',initEquipment);
+const countryData={
+  ukraine:{name:'Украина',summary:'Шесть проектов и направлений в актуальном референс-листе.',projects:['Мокро-Калигорское месторождение — бурый уголь, Greenfield, 2010–2012','Metinvest Engineering / Northern GOK — комплекс сгущения хвостов, 2021–2024','RINA Consulting – CSM S.p.A. / PJSC AMKR — обратная флотация, 2026 — в работе','Metinvest — классификация железорудных окатышей, 2022–2023','Комплекс концентрации металлосодержащего сырья','Гидроциклонные установки / мокрые SAG-мельницы']},
+  guatemala:{name:'Гватемала',summary:'Никелевые проекты Fenix и Montufar.',projects:['Fenix — Brownfield, никелевая руда, PFS / Engineering / Equipment Supply, 2012–2014','Montufar — Greenfield, никелевая руда, Feasibility Study / Engineering / Equipment Supply, 2012–2014']},
+  vietnam:{name:'Вьетнам',summary:'Проекты по минеральным пескам, тяжёлым минеральным концентратам и монациту.',projects:['Amigo Minerals — Ilmenite-Zircon Processing Complex, 2016','GPM — Brownfield / Technology Upgrade, 2018']},
+  chile:{name:'Чили',summary:'Greenfield-проект горнодобывающего и обогатительного предприятия.',projects:['El Plomo — свинцово-цинковая руда, EPCM, 2016–2018']},
+  guinea:{name:'Гвинея-Бисау',summary:'Greenfield-проект по добыче и обогащению титанового сырья.',projects:['Gutaq — Technology Development / Engineering / Equipment Supply, 2020']},
+  turkey:{name:'Турция',summary:'Технологический проект для ферросплавного направления.',projects:['INTECH Industrial Technology — cored wire / ferroalloys, FS / EPC, 2023']}
+};
+const countryLabels={ukraine:'Украина',guatemala:'Гватемала',vietnam:'Вьетнам',chile:'Чили',guinea:'Гвинея-Бисау',turkey:'Турция'};
+function renderCountry(key){const d=countryData[key];if(!d)return;document.getElementById('country-title').textContent=d.name;document.getElementById('country-summary').textContent=d.summary;document.getElementById('country-projects').innerHTML=d.projects.map(x=>`<div class="country-project-item">${x}</div>`).join('');document.querySelectorAll('.country-button').forEach(b=>b.classList.toggle('active',b.dataset.country===key));}
+function initProjects(){const wrap=document.getElementById('country-buttons');if(wrap){wrap.innerHTML=Object.entries(countryLabels).map(([k,v])=>`<button type="button" class="country-button" data-country="${k}">${v}</button>`).join('');wrap.addEventListener('click',e=>{const b=e.target.closest('[data-country]');if(b)renderCountry(b.dataset.country)});renderCountry('ukraine');}
+ document.querySelectorAll('.projects-tab').forEach(tab=>tab.addEventListener('click',()=>{const key=tab.dataset.projectTab;document.querySelectorAll('.projects-tab').forEach(t=>{const on=t===tab;t.classList.toggle('active',on);t.setAttribute('aria-selected',on?'true':'false')});document.querySelectorAll('.projects-pane').forEach(p=>{const on=p.dataset.projectPane===key;p.classList.toggle('active',on);p.hidden=!on;});}));}
+function initEquipment(){renderEquipment('crushing');document.querySelectorAll('.equipment-zone,.mobile-equipment-card').forEach(el=>{el.addEventListener('mouseenter',()=>renderEquipment(el.dataset.equipment));el.addEventListener('focus',()=>renderEquipment(el.dataset.equipment));el.addEventListener('click',()=>renderEquipment(el.dataset.equipment));});}
+document.addEventListener('DOMContentLoaded',()=>{initEquipment();initProjects();});
