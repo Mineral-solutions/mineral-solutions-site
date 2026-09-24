@@ -18,7 +18,6 @@
     <a href="#industries">Отрасли</a>
     <a href="#equipment">Оборудование</a>
     <a href="#projects">Проекты</a>
-    <a href="#references">Референсы</a>
     <a href="#contacts">Контакты</a>
   </nav>
   <button class="burger" aria-label="Меню" onclick="toggleMenu()">☰</button>
@@ -85,156 +84,144 @@
   </div>
 </section>
 
-<section id="equipment" class="section equipment equipment-interactive">
+<section id="equipment" class="section equipment-showcase">
   <div class="kicker">ОБОРУДОВАНИЕ И ТЕХНОЛОГИЧЕСКИЕ РЕШЕНИЯ</div>
-  <div class="interactive-head">
+  <div class="equipment-heading">
     <div>
-      <h2>Интерактивная карта оборудования</h2>
-      <p>Кликните по направлению, чтобы увидеть типовое оборудование, состав решений и формат нашей инженерной работы.</p>
+      <h2>Подбор под конкретную технологическую задачу</h2>
+      <p>Наведи курсор на направление или нажми на него — ниже откроется краткое описание оборудования и нашей инженерной работы.</p>
     </div>
   </div>
 
-  <div class="interactive-layout equipment-layout">
-    <div class="interactive-visual equipment-visual">
-      <img src="equipment-categories-ref.png" alt="Оборудование Mineral Solutions">
-      <button class="hotspot equipment-hotspot active" data-equipment="crushing" style="left:16%;top:24%;" aria-label="Дробильно-сортировочное оборудование"></button>
-      <button class="hotspot equipment-hotspot" data-equipment="beneficiation" style="left:50%;top:24%;" aria-label="Обогатительное оборудование"></button>
-      <button class="hotspot equipment-hotspot" data-equipment="dewatering" style="left:84%;top:24%;" aria-label="Сгущение, фильтрация и обезвоживание"></button>
-      <button class="hotspot equipment-hotspot" data-equipment="transport" style="left:16%;top:74%;" aria-label="Транспортировка и складирование"></button>
-      <button class="hotspot equipment-hotspot" data-equipment="pumps" style="left:50%;top:74%;" aria-label="Насосное и гидротранспортное оборудование"></button>
-      <button class="hotspot equipment-hotspot" data-equipment="lifting" style="left:84%;top:74%;" aria-label="Подъёмное оборудование"></button>
-    </div>
+  <div class="equipment-board" id="equipment-board">
+    <img src="equipment-interactive.png" alt="Направления оборудования Mineral Solutions">
+    <button class="equipment-zone active" data-equipment="crushing" style="left:0;top:0;width:33.333%;height:50%" aria-label="Дробильно-сортировочное оборудование"></button>
+    <button class="equipment-zone" data-equipment="beneficiation" style="left:33.333%;top:0;width:33.334%;height:50%" aria-label="Обогатительное оборудование"></button>
+    <button class="equipment-zone" data-equipment="dewatering" style="left:66.667%;top:0;width:33.333%;height:50%" aria-label="Сгущение, фильтрация и обезвоживание"></button>
+    <button class="equipment-zone" data-equipment="transport" style="left:0;top:50%;width:33.333%;height:50%" aria-label="Транспортировка и складирование"></button>
+    <button class="equipment-zone" data-equipment="pumps" style="left:33.333%;top:50%;width:33.334%;height:50%" aria-label="Насосное и гидротранспортное оборудование"></button>
+    <button class="equipment-zone" data-equipment="lifting" style="left:66.667%;top:50%;width:33.333%;height:50%" aria-label="Подъёмное оборудование"></button>
+  </div>
 
-    <div class="interactive-panel">
-      <div class="panel-kicker">Направление</div>
+  <div class="equipment-detail" aria-live="polite">
+    <div class="equipment-detail-main">
+      <div class="panel-kicker">ВЫБРАННОЕ НАПРАВЛЕНИЕ</div>
       <h3 id="equipment-title"></h3>
-      <p id="equipment-description" class="interactive-description"></p>
-      <div class="interactive-meta">
-        <div>
-          <span>Типовые позиции</span>
-          <p id="equipment-items"></p>
-        </div>
-        <div>
-          <span>Что делаем</span>
-          <p id="equipment-services"></p>
-        </div>
-      </div>
-      <div class="chip-list" id="equipment-tags"></div>
-      <div class="interactive-selector" id="equipment-selector"></div>
+      <p id="equipment-description"></p>
+    </div>
+    <div class="equipment-detail-col">
+      <span>Типовые позиции</span>
+      <p id="equipment-items"></p>
+    </div>
+    <div class="equipment-detail-col">
+      <span>Что делаем</span>
+      <p id="equipment-services"></p>
     </div>
   </div>
+
+  <div class="equipment-tabs" id="equipment-tabs"></div>
 </section>
 
-<section id="projects" class="section projects projects-interactive">
-  <div class="kicker">ГЕОГРАФИЯ ПРОЕКТОВ</div>
-  <div class="interactive-head">
-    <div>
-      <h2>Интерактивная карта международного опыта</h2>
-      <p>Выберите точку на карте — справа откроется страна, проекты и краткое описание выполненных работ.</p>
-    </div>
-  </div>
-
-  <div class="interactive-layout projects-layout">
-    <div class="interactive-visual projects-visual">
-      <img src="projects-map-ref.png" alt="География проектов Mineral Solutions">
-      <button class="hotspot project-hotspot active" data-project="ukraine1" style="left:49%;top:31%;" aria-label="Украина"></button>
-      <button class="hotspot project-hotspot" data-project="georgia" style="left:55%;top:34%;" aria-label="Грузия"></button>
-      <button class="hotspot project-hotspot" data-project="uzbekistan" style="left:61%;top:33%;" aria-label="Узбекистан"></button>
-      <button class="hotspot project-hotspot" data-project="turkey" style="left:52%;top:37%;" aria-label="Турция"></button>
-      <button class="hotspot project-hotspot" data-project="poland" style="left:47%;top:26%;" aria-label="Польша"></button>
-      <button class="hotspot project-hotspot" data-project="guatemala" style="left:20%;top:41%;" aria-label="Гватемала"></button>
-      <button class="hotspot project-hotspot" data-project="brazil" style="left:31%;top:62%;" aria-label="Бразилия"></button>
-      <button class="hotspot project-hotspot" data-project="chile" style="left:30%;top:79%;" aria-label="Чили"></button>
-      <button class="hotspot project-hotspot" data-project="guinea" style="left:43%;top:54%;" aria-label="Гвинея-Бисау"></button>
-      <button class="hotspot project-hotspot" data-project="egypt" style="left:52%;top:43%;" aria-label="Египет"></button>
-      <button class="hotspot project-hotspot" data-project="india" style="left:66%;top:49%;" aria-label="Индия"></button>
-      <button class="hotspot project-hotspot" data-project="vietnam" style="left:75%;top:47%;" aria-label="Вьетнам"></button>
-      <button class="hotspot project-hotspot" data-project="ukraine2" style="left:50%;top:32.5%;" aria-label="Украина Белая Церковь"></button>
-    </div>
-
-    <div class="interactive-panel">
-      <div class="panel-kicker">Страна / проект</div>
-      <div class="project-flagline">
-        <span id="project-flag" class="flag-box"></span>
-        <div>
-          <h3 id="project-country"></h3>
-          <div id="project-name" class="project-name"></div>
-        </div>
-      </div>
-      <p id="project-description" class="interactive-description"></p>
-      <ul id="project-bullets" class="project-bullets"></ul>
-      <div class="chip-list" id="project-tags"></div>
-      <div class="interactive-selector" id="project-selector"></div>
-    </div>
-  </div>
-</section>
-
-
-<section id="references" class="section references">
-  <div class="references-head">
+<section id="projects" class="section project-reference">
+  <div class="reference-title-row">
     <div>
       <div class="kicker">РЕФЕРЕНС-ЛИСТ</div>
-      <h2>Ключевые проекты и текущие работы</h2>
-      <p>Опыт команды в горных работах, обогащении полезных ископаемых и промышленном инжиниринге.</p>
+      <h2>Ключевые реализованные проекты — горные работы и обогащение полезных ископаемых</h2>
+      <p>Перечень приведён по нашему актуальному референс-листу: период, страна, проект, тип, сырьё, стадия, описание и объём выполненных работ.</p>
     </div>
     <a class="reference-download" href="references-mining.pdf" target="_blank" rel="noopener">Открыть полный референс-лист · PDF</a>
   </div>
 
-  <div class="reference-grid">
-    <article>
-      <div class="ref-meta"><span>2010–2012</span><span>Украина</span></div>
-      <h3>Мокро-Калигорское месторождение</h3>
-      <p>Бурый уголь · Greenfield · Feasibility / Working Design / Development</p>
+  <div class="project-list">
+    <article class="project-row">
+      <div class="project-no">01</div>
+      <div class="project-core"><div class="project-meta">2010–2012 · Украина</div><h3>Мокро-Калигорское месторождение</h3><div class="project-tags"><span>Greenfield</span><span>Бурый уголь</span><span>Feasibility / Working Design / Development</span></div></div>
+      <div class="project-text"><b>Краткое описание</b><p>Создание с нуля открытого буроугольного разреза в сложных гидротехнических условиях. Производительность — 300 000 тонн/год.</p></div>
+      <div class="project-text"><b>Объём выполненных работ</b><p>Проработка освоения месторождения; водопонижение и дренаж; рабочий проект; сопровождение согласований; инженерная подготовка и непосредственный запуск горного предприятия.</p></div>
     </article>
-    <article>
-      <div class="ref-meta"><span>2012–2014</span><span>Гватемала</span></div>
-      <h3>Fenix</h3>
-      <p>Никелевая руда · Brownfield · PFS / Engineering / Equipment Supply</p>
+
+    <article class="project-row">
+      <div class="project-no">02</div>
+      <div class="project-core"><div class="project-meta">2012–2014 · Гватемала</div><h3>Fenix</h3><div class="project-tags"><span>Brownfield</span><span>Никелевая руда</span><span>PFS / Engineering / Equipment Supply</span></div></div>
+      <div class="project-text"><b>Краткое описание</b><p>Реактивация остановленного горнодобывающего предприятия и восстановление производственного цикла добычи никелевой руды. Производительность — 3 100 000 влажных метрических тонн никелевой руды в год.</p></div>
+      <div class="project-text"><b>Объём выполненных работ</b><p>Предпроектная проработка; технологическая схема добычи; инженерные решения; спецификации; организация производства; подбор и поставка оборудования.</p></div>
     </article>
-    <article>
-      <div class="ref-meta"><span>2012–2014</span><span>Гватемала</span></div>
-      <h3>Montufar</h3>
-      <p>Никелевая руда · Greenfield · Feasibility Study / Engineering / Equipment Supply</p>
+
+    <article class="project-row">
+      <div class="project-no">03</div>
+      <div class="project-core"><div class="project-meta">2012–2014 · Гватемала</div><h3>Montufar</h3><div class="project-tags"><span>Greenfield</span><span>Никелевая руда</span><span>Feasibility Study / Engineering / Equipment Supply</span></div></div>
+      <div class="project-text"><b>Краткое описание</b><p>Создание нового горнодобывающего предприятия по добыче никелевой руды с нуля, включая формирование всей технологической и производственной концепции объекта. Производительность — 560 000 влажных метрических тонн в год.</p></div>
+      <div class="project-text"><b>Объём выполненных работ</b><p>ТЭО; технологические решения по добыче; производственная схема; организация горных работ; подбор и поставка оборудования; инженерное и производственное сопровождение.</p></div>
     </article>
-    <article>
-      <div class="ref-meta"><span>2016</span><span>Вьетнам</span></div>
-      <h3>Amigo Minerals — Ilmenite-Zircon Processing Complex</h3>
-      <p>Ильменит-цирконовые руды / минеральные пески · Greenfield + Brownfield</p>
+
+    <article class="project-row">
+      <div class="project-no">04</div>
+      <div class="project-core"><div class="project-meta">2016 · Вьетнам</div><h3>Amigo Minerals — Ilmenite-Zircon Processing Complex</h3><div class="project-tags"><span>Greenfield + Brownfield</span><span>Ильменит-цирконовые руды / минеральные пески</span><span>Basic / Detailed Engineering / Construction / Commissioning</span></div></div>
+      <div class="project-text"><b>Краткое описание</b><p>Создание комплексной технологии мокрого и сухого обогащения полиминеральных песков производительностью 250 т/ч.</p></div>
+      <div class="project-text"><b>Объём выполненных работ</b><p>Flowsheet; материальные балансы; PFD; критерии проектирования; подбор оборудования; гравитационная, магнитная и электростатическая сепарация; получение ильменита, циркона, рутила и монацитового полупродукта; сопровождение строительства и пусконаладки.</p></div>
     </article>
-    <article>
-      <div class="ref-meta"><span>2016–2018</span><span>Чили</span></div>
-      <h3>El Plomo</h3>
-      <p>Свинцово-цинковая руда · Greenfield · EPCM</p>
+
+    <article class="project-row">
+      <div class="project-no">05</div>
+      <div class="project-core"><div class="project-meta">2016–2018 · Чили</div><h3>El Plomo</h3><div class="project-tags"><span>Greenfield</span><span>Свинцово-цинковая руда</span><span>EPCM</span></div></div>
+      <div class="project-text"><b>Краткое описание</b><p>Разработка нового горнодобывающего и обогатительного предприятия: добыча — 420 000 тонн/год, переработка руды — 50 тонн/час.</p></div>
+      <div class="project-text"><b>Объём выполненных работ</b><p>Проектирование горных работ; технология обогащения; организация производственного цикла; K-Mine GIS и планирование; дороги, склады, дренаж и логистика; подбор и поставка оборудования; EPCM-сопровождение.</p></div>
     </article>
-    <article>
-      <div class="ref-meta"><span>2018</span><span>Вьетнам</span></div>
-      <h3>GPM</h3>
-      <p>Тяжёлые минеральные концентраты / монацит · Technology Development / Implementation</p>
+
+    <article class="project-row">
+      <div class="project-no">06</div>
+      <div class="project-core"><div class="project-meta">2018 · Вьетнам</div><h3>GPM</h3><div class="project-tags"><span>Brownfield / Technology Upgrade</span><span>Тяжёлые минеральные концентраты / монацит</span><span>Technology Development / Implementation</span></div></div>
+      <div class="project-text"><b>Краткое описание</b><p>Модернизация технологии разделения коллективных концентратов и разработка технологии обогащения высококонцентрированного монацитового продукта.</p></div>
+      <div class="project-text"><b>Объём выполненных работ</b><p>Новая схема сухой магнитной и электростатической сепарации; мокрая гравитационная схема обогащения монацита на концентрационных столах.</p></div>
     </article>
-    <article>
-      <div class="ref-meta"><span>2020</span><span>Гвинея-Бисау</span></div>
-      <h3>Gutaq</h3>
-      <p>Титановые руды · Greenfield · Technology Development / Engineering / Equipment Supply</p>
+
+    <article class="project-row">
+      <div class="project-no">07</div>
+      <div class="project-core"><div class="project-meta">2020 · Гвинея-Бисау</div><h3>Gutaq</h3><div class="project-tags"><span>Greenfield</span><span>Титановые руды</span><span>Technology Development / Engineering / Equipment Supply</span></div></div>
+      <div class="project-text"><b>Краткое описание</b><p>Разработка нового предприятия по добыче и обогащению титанового сырья.</p></div>
+      <div class="project-text"><b>Объём выполненных работ</b><p>Технология добычи и обогащения; технологические и инженерные решения; формирование технологической схемы; подбор и поставка оборудования.</p></div>
     </article>
-    <article>
-      <div class="ref-meta"><span>2021–2024</span><span>Украина</span></div>
-      <h3>Metinvest Engineering / Northern GOK</h3>
-      <p>Комплекс сгущения хвостов · Basic Engineering / FEED → Detailed Engineering → Supervision</p>
+
+    <article class="project-row">
+      <div class="project-no">08</div>
+      <div class="project-core"><div class="project-meta">2021–2024 · Украина</div><h3>Metinvest Engineering / Northern GOK — комплекс сгущения хвостов</h3><div class="project-tags"><span>Brownfield / Expansion</span><span>Железорудные хвосты</span><span>Basic Engineering / FEED → Detailed Engineering → Supervision</span></div></div>
+      <div class="project-text"><b>Краткое описание</b><p>Комплекс сгущения хвостов производительностью 67 650 м³/ч по пульпе / 2 410 т/ч по сухому продукту, включая четыре сгустителя HRT-60.</p></div>
+      <div class="project-text"><b>Объём выполненных работ</b><p>Технологическая интеграция; водно-шламовые балансы; PFD/P&amp;ID; пульпопроводы и насосные станции; реагентное хозяйство; оборотное водоснабжение; дренаж; utilities; строительные решения; BIM; автоматизация; подготовка данных для HAZOP; междисциплинарная координация.</p></div>
     </article>
-    <article>
-      <div class="ref-meta"><span>2022–2023</span><span>Украина</span></div>
-      <h3>Metinvest — классификация железорудных окатышей</h3>
-      <p>Железорудное сырьё / окатыши · Technology Development / Engineering</p>
+
+    <article class="project-row">
+      <div class="project-no">09</div>
+      <div class="project-core"><div class="project-meta">2023 · Турция</div><h3>INTECH Industrial Technology</h3><div class="project-tags"><span>Industrial Technology / Brownfield</span><span>Металлургическое производство / ferroalloys</span><span>FS / EPC</span></div></div>
+      <div class="project-text"><b>Краткое описание</b><p>Разработка и внедрение технологии производства металлургической порошковой проволоки / cored wire для ферросплавного направления.</p></div>
+      <div class="project-text"><b>Объём выполненных работ</b><p>Разработка технологии; инженерная проработка; проектирование технологической линии; внедрение производственного решения. Роль — технологический консультант и разработчик в качестве субподрядчика. Производительность — 1 000 т/мес.</p></div>
     </article>
-    <article>
-      <div class="ref-meta"><span>2023</span><span>Турция</span></div>
-      <h3>INTECH Industrial Technology</h3>
-      <p>Металлургическое производство / ferroalloys · Brownfield · FS / EPC</p>
+
+    <article class="project-row">
+      <div class="project-no">10</div>
+      <div class="project-core"><div class="project-meta">2026 — в работе · Украина</div><h3>RINA Consulting – CSM S.p.A. / PJSC AMKR</h3><div class="project-tags"><span>Brownfield / Modernization</span><span>Железная руда / обратная флотация</span><span>Feasibility Study</span></div></div>
+      <div class="project-text"><b>Краткое описание</b><p>Оценка реализуемости одного из приоритетных проектов программы декарбонизации AMKR — внедрение технологии обратной флотации.</p></div>
+      <div class="project-text"><b>Объём выполненных работ</b><p>Технологический консультант и разработчик в составе субподрядчика; анализ и разработка решений по обратной флотации для производительности порядка 1 500 т/ч.</p></div>
     </article>
-    <article>
-      <div class="ref-meta"><span>2026 — в работе</span><span>Украина</span></div>
-      <h3>RINA Consulting – CSM S.p.A. / PJSC AMKR</h3>
-      <p>Железная руда / обратная флотация · Brownfield / Modernization · Feasibility Study</p>
+
+    <article class="project-row">
+      <div class="project-no">11</div>
+      <div class="project-core"><div class="project-meta">2022–2023 · Украина</div><h3>Metinvest — классификация железорудных окатышей</h3><div class="project-tags"><span>Brownfield / Technology Upgrade</span><span>Железорудное сырьё / окатыши</span><span>Technology Development / Engineering</span></div></div>
+      <div class="project-text"><b>Краткое описание</b><p>Разработка технологии классификации железорудных окатышей для действующего металлургического / горно-обогатительного производства.</p></div>
+      <div class="project-text"><b>Объём выполненных работ</b><p>Технологическая схема классификации; инженерная проработка; технологические расчёты; подбор и интеграция оборудования в существующий производственный процесс.</p></div>
+    </article>
+
+    <article class="project-row">
+      <div class="project-no">12</div>
+      <div class="project-core"><div class="project-meta">Украина</div><h3>Комплекс концентрации металлосодержащего сырья</h3><div class="project-tags"><span>Greenfield / Brownfield</span><span>Металлосодержащие руды и отходы</span><span>Technology Development / Engineering</span></div></div>
+      <div class="project-text"><b>Краткое описание</b><p>Создание технологического комплекса для концентрации и доизвлечения полезных компонентов.</p></div>
+      <div class="project-text"><b>Объём выполненных работ</b><p>Разработка технологической схемы; инженерная проработка; подбор и интеграция технологического оборудования.</p></div>
+    </article>
+
+    <article class="project-row">
+      <div class="project-no">13</div>
+      <div class="project-core"><div class="project-meta">Украина</div><h3>Гидроциклонные установки / мокрые SAG-мельницы</h3><div class="project-tags"><span>Modernization / Equipment Supply</span><span>Минеральное сырьё</span><span>Engineering / Manufacturing / Supply</span></div></div>
+      <div class="project-text"><b>Краткое описание</b><p>Модернизация отдельных переделов горно-обогатительных производств.</p></div>
+      <div class="project-text"><b>Объём выполненных работ</b><p>Инженерная проработка, изготовление и поставка специализированного оборудования с интеграцией в существующую технологическую схему.</p></div>
     </article>
   </div>
 </section>
