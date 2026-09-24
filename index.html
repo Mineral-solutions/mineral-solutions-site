@@ -18,6 +18,7 @@
     <a href="#industries">Отрасли</a>
     <a href="#equipment">Оборудование</a>
     <a href="#projects">Проекты</a>
+    <a href="#references">Референсы</a>
     <a href="#contacts">Контакты</a>
   </nav>
   <button class="burger" aria-label="Меню" onclick="toggleMenu()">☰</button>
@@ -84,31 +85,160 @@
   </div>
 </section>
 
-<section id="equipment" class="section equipment">
-  <div class="section-copy">
-    <div class="kicker">ОБОРУДОВАНИЕ И ТЕХНОЛОГИЧЕСКИЕ РЕШЕНИЯ</div>
-    <h2>Подбор под конкретную технологическую задачу</h2>
-    <div class="equipment-list">
-      <span>Дробильно-сортировочное оборудование</span>
-      <span>Обогатительное оборудование</span>
-      <span>Сгущение, фильтрация и обезвоживание</span>
-      <span>Транспортировка и складирование</span>
-      <span>Насосное и гидротранспортное оборудование</span>
-      <span>Подъёмное оборудование</span>
+<section id="equipment" class="section equipment equipment-interactive">
+  <div class="kicker">ОБОРУДОВАНИЕ И ТЕХНОЛОГИЧЕСКИЕ РЕШЕНИЯ</div>
+  <div class="interactive-head">
+    <div>
+      <h2>Интерактивная карта оборудования</h2>
+      <p>Кликните по направлению, чтобы увидеть типовое оборудование, состав решений и формат нашей инженерной работы.</p>
     </div>
   </div>
-  <div class="equipment-photo"></div>
-</section>
 
-<section id="projects" class="section projects">
-  <div class="kicker">ГЕОГРАФИЯ РЕАЛИЗОВАННЫХ ПРОЕКТОВ</div>
-  <h2>Опыт в горнодобывающей, обогатительной и металлургической промышленности</h2>
-  <div class="countries">
-    <span>Украина</span><span>Армения</span><span>Узбекистан</span><span>Гватемала</span>
-    <span>Перу</span><span>Вьетнам</span><span>Гвинея-Бисау</span><span>Турция</span>
-    <span>Польша</span><span>Бразилия</span><span>Египет</span><span>Индия</span>
+  <div class="interactive-layout equipment-layout">
+    <div class="interactive-visual equipment-visual">
+      <img src="equipment-categories-ref.png" alt="Оборудование Mineral Solutions">
+      <button class="hotspot equipment-hotspot active" data-equipment="crushing" style="left:16%;top:24%;" aria-label="Дробильно-сортировочное оборудование"></button>
+      <button class="hotspot equipment-hotspot" data-equipment="beneficiation" style="left:50%;top:24%;" aria-label="Обогатительное оборудование"></button>
+      <button class="hotspot equipment-hotspot" data-equipment="dewatering" style="left:84%;top:24%;" aria-label="Сгущение, фильтрация и обезвоживание"></button>
+      <button class="hotspot equipment-hotspot" data-equipment="transport" style="left:16%;top:74%;" aria-label="Транспортировка и складирование"></button>
+      <button class="hotspot equipment-hotspot" data-equipment="pumps" style="left:50%;top:74%;" aria-label="Насосное и гидротранспортное оборудование"></button>
+      <button class="hotspot equipment-hotspot" data-equipment="lifting" style="left:84%;top:74%;" aria-label="Подъёмное оборудование"></button>
+    </div>
+
+    <div class="interactive-panel">
+      <div class="panel-kicker">Направление</div>
+      <h3 id="equipment-title"></h3>
+      <p id="equipment-description" class="interactive-description"></p>
+      <div class="interactive-meta">
+        <div>
+          <span>Типовые позиции</span>
+          <p id="equipment-items"></p>
+        </div>
+        <div>
+          <span>Что делаем</span>
+          <p id="equipment-services"></p>
+        </div>
+      </div>
+      <div class="chip-list" id="equipment-tags"></div>
+      <div class="interactive-selector" id="equipment-selector"></div>
+    </div>
   </div>
 </section>
+
+<section id="projects" class="section projects projects-interactive">
+  <div class="kicker">ГЕОГРАФИЯ ПРОЕКТОВ</div>
+  <div class="interactive-head">
+    <div>
+      <h2>Интерактивная карта международного опыта</h2>
+      <p>Выберите точку на карте — справа откроется страна, проекты и краткое описание выполненных работ.</p>
+    </div>
+  </div>
+
+  <div class="interactive-layout projects-layout">
+    <div class="interactive-visual projects-visual">
+      <img src="projects-map-ref.png" alt="География проектов Mineral Solutions">
+      <button class="hotspot project-hotspot active" data-project="ukraine1" style="left:49%;top:31%;" aria-label="Украина"></button>
+      <button class="hotspot project-hotspot" data-project="georgia" style="left:55%;top:34%;" aria-label="Грузия"></button>
+      <button class="hotspot project-hotspot" data-project="uzbekistan" style="left:61%;top:33%;" aria-label="Узбекистан"></button>
+      <button class="hotspot project-hotspot" data-project="turkey" style="left:52%;top:37%;" aria-label="Турция"></button>
+      <button class="hotspot project-hotspot" data-project="poland" style="left:47%;top:26%;" aria-label="Польша"></button>
+      <button class="hotspot project-hotspot" data-project="guatemala" style="left:20%;top:41%;" aria-label="Гватемала"></button>
+      <button class="hotspot project-hotspot" data-project="brazil" style="left:31%;top:62%;" aria-label="Бразилия"></button>
+      <button class="hotspot project-hotspot" data-project="chile" style="left:30%;top:79%;" aria-label="Чили"></button>
+      <button class="hotspot project-hotspot" data-project="guinea" style="left:43%;top:54%;" aria-label="Гвинея-Бисау"></button>
+      <button class="hotspot project-hotspot" data-project="egypt" style="left:52%;top:43%;" aria-label="Египет"></button>
+      <button class="hotspot project-hotspot" data-project="india" style="left:66%;top:49%;" aria-label="Индия"></button>
+      <button class="hotspot project-hotspot" data-project="vietnam" style="left:75%;top:47%;" aria-label="Вьетнам"></button>
+      <button class="hotspot project-hotspot" data-project="ukraine2" style="left:50%;top:32.5%;" aria-label="Украина Белая Церковь"></button>
+    </div>
+
+    <div class="interactive-panel">
+      <div class="panel-kicker">Страна / проект</div>
+      <div class="project-flagline">
+        <span id="project-flag" class="flag-box"></span>
+        <div>
+          <h3 id="project-country"></h3>
+          <div id="project-name" class="project-name"></div>
+        </div>
+      </div>
+      <p id="project-description" class="interactive-description"></p>
+      <ul id="project-bullets" class="project-bullets"></ul>
+      <div class="chip-list" id="project-tags"></div>
+      <div class="interactive-selector" id="project-selector"></div>
+    </div>
+  </div>
+</section>
+
+
+<section id="references" class="section references">
+  <div class="references-head">
+    <div>
+      <div class="kicker">РЕФЕРЕНС-ЛИСТ</div>
+      <h2>Ключевые проекты и текущие работы</h2>
+      <p>Опыт команды в горных работах, обогащении полезных ископаемых и промышленном инжиниринге.</p>
+    </div>
+    <a class="reference-download" href="references-mining.pdf" target="_blank" rel="noopener">Открыть полный референс-лист · PDF</a>
+  </div>
+
+  <div class="reference-grid">
+    <article>
+      <div class="ref-meta"><span>2010–2012</span><span>Украина</span></div>
+      <h3>Мокро-Калигорское месторождение</h3>
+      <p>Бурый уголь · Greenfield · Feasibility / Working Design / Development</p>
+    </article>
+    <article>
+      <div class="ref-meta"><span>2012–2014</span><span>Гватемала</span></div>
+      <h3>Fenix</h3>
+      <p>Никелевая руда · Brownfield · PFS / Engineering / Equipment Supply</p>
+    </article>
+    <article>
+      <div class="ref-meta"><span>2012–2014</span><span>Гватемала</span></div>
+      <h3>Montufar</h3>
+      <p>Никелевая руда · Greenfield · Feasibility Study / Engineering / Equipment Supply</p>
+    </article>
+    <article>
+      <div class="ref-meta"><span>2016</span><span>Вьетнам</span></div>
+      <h3>Amigo Minerals — Ilmenite-Zircon Processing Complex</h3>
+      <p>Ильменит-цирконовые руды / минеральные пески · Greenfield + Brownfield</p>
+    </article>
+    <article>
+      <div class="ref-meta"><span>2016–2018</span><span>Чили</span></div>
+      <h3>El Plomo</h3>
+      <p>Свинцово-цинковая руда · Greenfield · EPCM</p>
+    </article>
+    <article>
+      <div class="ref-meta"><span>2018</span><span>Вьетнам</span></div>
+      <h3>GPM</h3>
+      <p>Тяжёлые минеральные концентраты / монацит · Technology Development / Implementation</p>
+    </article>
+    <article>
+      <div class="ref-meta"><span>2020</span><span>Гвинея-Бисау</span></div>
+      <h3>Gutaq</h3>
+      <p>Титановые руды · Greenfield · Technology Development / Engineering / Equipment Supply</p>
+    </article>
+    <article>
+      <div class="ref-meta"><span>2021–2024</span><span>Украина</span></div>
+      <h3>Metinvest Engineering / Northern GOK</h3>
+      <p>Комплекс сгущения хвостов · Basic Engineering / FEED → Detailed Engineering → Supervision</p>
+    </article>
+    <article>
+      <div class="ref-meta"><span>2022–2023</span><span>Украина</span></div>
+      <h3>Metinvest — классификация железорудных окатышей</h3>
+      <p>Железорудное сырьё / окатыши · Technology Development / Engineering</p>
+    </article>
+    <article>
+      <div class="ref-meta"><span>2023</span><span>Турция</span></div>
+      <h3>INTECH Industrial Technology</h3>
+      <p>Металлургическое производство / ferroalloys · Brownfield · FS / EPC</p>
+    </article>
+    <article>
+      <div class="ref-meta"><span>2026 — в работе</span><span>Украина</span></div>
+      <h3>RINA Consulting – CSM S.p.A. / PJSC AMKR</h3>
+      <p>Железная руда / обратная флотация · Brownfield / Modernization · Feasibility Study</p>
+    </article>
+  </div>
+</section>
+
 
 <section class="section split">
   <div>
@@ -140,9 +270,9 @@
   <div class="contact-panel">
     <div class="kicker">ОБРАТНАЯ СВЯЗЬ</div>
     <h2>Расскажите о вашей задаче</h2>
-    <p class="contact-lead">Опишите проект или вопрос — сообщение будет направлено на <a href="mailto:mineral.solutions.office@gmail.com">mineral.solutions.office@gmail.com</a></p>
+    <p class="contact-lead">Опишите проект или вопрос — сообщение будет направлено на <a href="mailto:office@mineral-solutions.com.ua">office@mineral-solutions.com.ua</a></p>
 
-    <form class="contact-form" action="https://formsubmit.co/mineral.solutions.office@gmail.com" method="POST">
+    <form class="contact-form" action="https://formsubmit.co/office@mineral-solutions.com.ua" method="POST">
       <input type="hidden" name="_subject" value="Новая заявка с сайта Mineral Solutions">
       <input type="hidden" name="_template" value="table">
       <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off">
